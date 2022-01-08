@@ -1,0 +1,209 @@
+body{
+    background: #1c1f23;
+}
+
+::-webkit-scrollbar{
+    width: 2px;
+    height:1px;
+}
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: #eee;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#ddd;
+}
+::-webkit-scrollbar-corner{
+    background:transparent; 
+}
+
+.codingscreen{
+    /* height: 100%; */
+    display: grid ;
+    z-index: 5;
+    grid-template-columns:auto 1fr auto ;
+}
+
+.exploreContainer{
+    width: 215px;                       
+    /* display:grid; */
+    /* grid-template-rows:1fr auto ; */
+}
+
+
+.exploreContainerStyle{
+    background: #2d3239;
+}
+
+.filescontainer{
+    color:#fff;
+    font-family: century gothic;
+    white-space:nowrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 250px;
+}
+
+.foldercontainer{
+    background: #1c1f23;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color:white;
+    font-family: century gothic ;
+    white-space:nowrap;
+    border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden ;
+    /* z-index:auto; */
+}
+
+.foldertitle{
+    font-size:15px;
+    padding:10px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+#foldername{
+    display: inline-block;
+}
+#syncfiles ,#changefolder{
+    display: inline-block;
+    color: #fff;
+    border : 0; 
+    cursor: pointer;
+    padding: 5px;
+    font-size: 9px;
+    outline:0;
+}
+
+#syncfiles{
+    font-size: 12px;
+    margin-right: 10px;
+    background:transparent ;
+}
+
+#syncfiles:hover{
+    background:#2d2a2f;
+}
+
+#changefolder{
+    letter-spacing: 1.1;
+    background:linear-gradient(#343f4c,#2b3038) ;
+}
+
+.explorefiles{
+    display:flex;
+    overflow: scroll;
+    flex-direction: column;
+    max-height: 350px;
+}
+
+.editorcontainer{
+    display:grid;
+    /* grid-template-columns: 1fr; */
+    grid-template-rows: 1fr auto auto;
+}
+.editorcontainer .codeResult{
+    background-color: #000;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    border: 1px ;
+    border-color: #fff;
+    color: #fff;
+    height: 150px;
+    overflow: scroll;
+}
+.codestate{
+    border-top: 1px solid #2d3239;
+    font-size:8pt;
+    color:#fff;
+    background-color:#141517;
+    height: 20px;
+    text-transform: uppercase;
+    font-family:century gothic; 
+}
+.codestate .currentlang{
+    float:right;
+    width:fit-content;
+    padding:1px;
+    border-left: 2px solid #2d3239;
+}
+
+.runprogramStyle button{
+    display:block;
+    height:50px;
+    width :50px ; 
+    margin-bottom: 5px;
+    cursor:pointer;
+    border:2px solid transparent;
+    outline:0;
+}
+
+.runprogramStyle button:hover{
+    box-shadow: inset 0px 0px 68px rgba(255,255,255,0.19);
+}
+#run{
+    background: url("../images/2.png")50% 50% no-repeat;
+    background-size:cover;
+}
+#createNewFileButton{
+    background: url("../images/save.png") 50% 50% no-repeat;
+    background-size:cover;
+}
+#openDoc{
+    background: url("../images/add.png")50% 50% no-repeat;
+    background-size:cover;
+}
+#LinkedIn{
+    position: absolute ;
+    bottom: 50px;
+    background:url("../images/linkedin.png") 50% 50% no-repeat;
+    background-size:cover;
+}
+#github{
+    position: absolute ;
+    bottom: 0;
+    background:url("../images/github.png") 50% 50% no-repeat;
+    background-size:cover;
+}
+
+
+.filescontainer li{
+    list-style: none;
+    padding-left:20px;
+    cursor:pointer;
+}
+ 
+.filescontainer li:hover{
+    background: #262a2f;
+}
+
+.closeTAbicon{
+    color: #fff;
+    font-weight:bold;
+    font-size:7px;
+    margin-top: 0px;
+    position: relative;
+    top: -2px;
+    left:-12px;
+    background: transparent;
+    padding:3px 5px 3px 5px;
+}
+
+.closeTAbicon:hover{
+    color: #1c1f23;
+}
+
+.fileNameSpan{
+    background:transparent ;
+    padding-top: 4px;
+    display: inline-block;
+    padding-bottom: 4px;
+    width: 100%;
+    font-size: 12px;
+}

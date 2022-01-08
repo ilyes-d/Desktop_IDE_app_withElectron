@@ -1,0 +1,16 @@
+expr   : expr plus prod // associativite a gauche
+       | expr sust prod // operations les moins prioritaires
+       | prod
+
+
+       prod   : prod multi factor // associativite a gauche
+       | prod division cst
+       |prod division  idf_inst                     
+       | factor
+
+       factor :idf_inst{
+       |cst 
+       |reel 
+       | par_ov expr par_fr 
+;
+ 

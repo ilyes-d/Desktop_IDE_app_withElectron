@@ -1,0 +1,22 @@
+Program merouane
+PDEC
+    //declarer le constante
+    @define Pint x=5;
+    @define Pint y=5;
+    //declarer les variable
+     j :Pint;
+     t|c|i|a :Pint;
+    
+PINST
+Begin 
+    /* merouane */
+    //merouane
+     j<--x-y;
+    FOR i <-- 1 WHILE 6
+    DO
+    DO i<--5; IF:(a+c <=1-t) ENDIF;
+    ENDFOR;
+    DO j<--5; IF: (!(j>5))
+    ELSE j<--j/2; ENDIF;
+End 
+                                                                               

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/codeslate.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="CSS/titlebar.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/codecontainerstyle.css">
+    <script>
+        if(typeof module === 'object'){
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="JS/jquery.min.js"></script> 
+    <script src="js/jquery.menu.js"></script>
+    <script src="JS/ace.js" charset="utf-8"></script>
+    <script src="JS/mode-javascript.js" charset="utf-8"></script>
+    <script src="JS/theme-twilight.js" charset="utf-8"></script>
+    <title>Document</title>
+</head>
+<style type="text/css" media="screen">
+        #editor { 
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            }
+</style>
+<body>
+    <div class="container">
+        <div class="titlebar titlebarstyle">
+            <div class="windowtitle NoSelect dragIt">MyCompilerIDE </div>
+            <div class="windowControl windowControlStyle">
+                <button class="material-icons" id="minimize" title="minimize">remove_circle_outline</button>
+                <button class="material-icons " id="maximize" title="maximize" >fullscreen</button>
+                <button class="material-icons"  id="close" title="close">close</button>
+            </div>
+            <div id="menu-bar">
+                <ul class="main-menu">
+                    <li>
+                        File
+                        <ul>
+                            
+                        <li class="icon save" onclick='createNewFile()'><a href="#">New File<span>Ctrl+N</span></a></li>
+                            <li>New Folder</li>
+                            
+                            <li class="separator"></li>
+                            <li class="icon save" onclick='saveFile()'><a href="javascript:void(0)">Save<span>Ctrl+S</span></a></li>
+                            
+                            <li class="icon save" onclick="showSaveDialogAndSaveFile()"><a href="javascript:void(0)">Save As</a></li>
+                            
+                            <li class="separator"></li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        View
+                        <ul>
+                            <li>Documents
+                                <ul>
+                                    <li>All</li>
+                                    <li class="separator"></li>
+                                    <li>Unfinished</li>
+                                    <li>Closed</li>
+                                </ul>
+                            </li>
+                            <li><a href="/#!/products">Products</a></li>
+                            <li class="separator"></li>
+                            <li>
+                                First level
+                                <ul>
+                                    <li>
+                                        Second level
+                                        <ul>
+                                            <li>
+                                                Third level menu item
+                                            </li>
+                                            <li>
+                                            Third level
+                                            <ul>
+                                                    <li>
+                                                        Forth level menu item 1
+                                                    </li>
+                                                    <li>
+                                                        Forth level menu item 2
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="separator"></li>
+                                            <li>Another third level menu item</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Items will make menus stretch as needed
+                                    </li>
+                                    <li class="separator"></li>
+                                    <li>
+                                        Another menu item
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="separator"></li>
+                            <li>Reports
+                                <ul>
+                                    <li>Sell history</li>
+                                    <li>Clients history</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Window
+                        <ul>
+                            <li class="icon save"><a href="javascript:void(0)">Full Screen<span>F11</span></a></li>
+                        
+                            <li>
+                                <a href="javascript:void(0)" onclick='toggleWidgets()'>Widgets<span><input type='checkbox' id='widgetCheckbox'></span></a>
+                            </li>
+                            <li class="separator"></li>
+                            <li>
+                                Options
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Tools
+                        <ul>
+                            <li>Load Snippets
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                </ul>
+                            </li>
+                            </ul>
+                    </li>
+
+                    <li>
+                        Settings
+                        <ul>
+                            <li onclick='settings("theme")'>Themes</li>
+                            <li class="separator"></li>
+                            <li>Upgrade account</li>
+                            <li>Registration</li>
+                            <li class="separator"></li>
+                            <li>Contact us</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Help
+                        <ul>
+                            <li onclick='showShortcuts()'>Shortcuts</li>
+                            <li class="separator"></li>
+                            <li>Upgrade account</li>
+                            <li>Registration</li>
+                            <li class="separator"></li>
+                            <li>Contact us</li>
+                        </ul>
+                    </li>
+                </ul>        
+            </div> 
+        </div> 
+      <div class="codingscreen">
+            <div class="exploreContainer exploreContainerStyle">
+                <div class="filescontainer">
+                    <li>
+                        <span class="closeTAbicon">x</span>
+                        <div class="fileNameSpan" id="filename">Untitled text</div>   
+                    </li>
+                </div>
+                <div class="foldercontainer">
+                    <div class="foldertitle">
+                        <div id="foldername">Foldername</div>
+                        <button id="syncfiles">sync</button>
+                        <button id="changefolder">change</button>
+                        
+                    </div>
+                    <div class="explorefiles"></div>
+                    
+                </div>
+            </div>
+            <div class="editorcontainer">
+                <textarea id="editor" class="CodeTextArea" >//Maybe i find it  </textarea>
+                <div class="codeResult">
+                    <pre id="outuputcode">results </pre>
+                </div>
+                <div class="codestate">
+                    <div class="currentlang">Compil lang</div>
+                </div>
+            </div>
+            <div class="runprogram runprogramStyle">
+                <button id="run" title="run program "></button>
+                <button id="createNewFileButton" title="save the file"></button>
+                <button id="openDoc" title="add-file"></button>
+                <button id="github" ></button>
+                <button id="LinkedIn"  ></button>
+            </div>
+        </div>        
+    </div>
+    <script src="./JS/codeslate.js"></script>
+    <script src="./JS/shortcut.js"></script>
+    <script src="./JS/titlebar.js"></script>
+    <!-- <script>
+       
+    </script> -->
+</body>
+</html>

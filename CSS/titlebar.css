@@ -1,0 +1,67 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+body *{
+    box-sizing: border-box;
+}
+
+
+.container{
+    /* height: 100%; */
+    height:100vh;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.titlebarstyle{
+    background: #202327;
+    color : #fff;
+    font-size: 10pt;
+}
+.titlebar{
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+.dragIt{
+    -webkit-app-region:drag;
+}
+
+.windowtitle{
+    padding: 10px;
+    height: auto;
+    display: inline-block;
+    font-family: montserrat;
+}
+
+.NoSelect:hover{
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+.windowControl{  
+    float: right;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 2px;
+    margin-right:12px ;
+}
+
+
+.windowControl button{
+    outline: 0;
+    border:0;
+    padding:5px;
+    background:none;
+    color: white;
+    font-weight: bold;
+    border:10px;
+}
+
+.windowControlStyle button:hover{
+    cursor: pointer;
+    background:#48494c;
+}

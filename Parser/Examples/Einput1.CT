@@ -1,0 +1,28 @@
+Program nom_program
+PDEC
+    @define Pint x=5;
+    @define Pfloat x=5;
+    i=0     :Pint;
+    i|j|k|c :Pint;
+    i|j|k|c :Pfloat;
+PINST
+Begin 
+    i <-- c+d;
+    i <-- c-d;
+    i <-- c/d;
+    i <-- c*d;
+    j <-- 12;
+    DO i<--5 : IF (j==2)
+    DO j<--5 : IF (k==2)
+    ELSE j<--j/2; 
+    FOR i<--2 WHILE 4
+    DO
+        j<--j/2;
+        c<--c+j;
+    ENDFOR
+    FOR i<-- 1 WHILE 5
+    DO
+        DO i<--5: IF (j==2)
+        ELSE j<--6;
+    ENDFOR
+End

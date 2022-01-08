@@ -1,0 +1,17 @@
+{
+  "name": "codeeditor",
+  "version": "1.0.0",
+  "description": "this is a gui for my code editor ",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-reloader": "^1.2.1"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.1"
+  }
+}
