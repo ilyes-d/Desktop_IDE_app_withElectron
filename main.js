@@ -91,7 +91,7 @@ ipcMain.on("runcommand",(_ ,filepath)=>{
   // run_script(" ",["C:\\Users\\ILYES\\CompilTp\\lexANDyacc\\out.exe<C:\\Users\\ILYES\\CompilTp\\lexANDyacc\\Examples\\Cinput1.txt"],null);
   // 
   // run_script("gcc C:\\Users\\ILYES\\CompilTp\\lexANDyacc\\lex.yy.c  C:\\Users\\ILYES\\CompilTp\\lexANDyacc\\syn.tab.c -o out",[" "],null);
-  run_script(" C:\\Users\\ILYES\\Desktop\\temp\\out.exe<",[""+filepath+""],null);
+  run_script(".\\Parser\\out.exe<",[""+filepath+""],null);
 });
   //minimize, maximize and close the window 
   ipcMain.on("minimize", ()=>{
